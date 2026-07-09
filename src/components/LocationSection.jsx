@@ -49,11 +49,11 @@ export default function LocationSection() {
           {/* Background */}
 <div className="absolute inset-0">
   <img
-    src="/images/salle.jpg"
-    alt="LE JOUR J Wedding Venue"
-    className="w-full h-full object-cover"
-    loading="lazy"
-  />
+  src={`${import.meta.env.BASE_URL}images/salle.jpg`}
+  alt="LE JOUR J Wedding Venue"
+  className="w-full h-full object-cover"
+  loading="lazy"
+/>
 
   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 </div>

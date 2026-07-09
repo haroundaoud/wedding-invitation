@@ -53,7 +53,7 @@ export default function App() {
       {/* Background audio — placeholder src, swap with real music file */}
       <audio ref={audioRef} loop preload="none">
         {/* Replace this src with your actual Tunisian Oud + Piano music file */}
-        <source src="/music/wedding-music.mp3" type="audio/mpeg" />
+        <source  src={`${import.meta.env.BASE_URL}music/wedding-music.mp3`}/> 
       </audio>
 
       {/* Envelope screen */}
