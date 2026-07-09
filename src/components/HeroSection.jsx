@@ -47,6 +47,36 @@ export default function HeroSection() {
 >
   ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجاً لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً﴾
 </motion.p>
+<br />  
+
+{/* Warm invitation greeting */}
+<motion.p
+  className="font-arabic text-base md:text-lg mb-6 leading-relaxed"
+  style={{ color: '#5B5040' }}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.9 }}
+>
+  تتشرّف عائلة المرحوم{" "}
+  <span
+    className="font-bold"
+    style={{ color: '#C8A45D' }}
+  >
+    علي داود
+  </span>{"    "}
+  و عائلة   {"       "}
+  <span
+    className="font-bold"
+    style={{ color: '#C8A45D' }}
+  >
+     منير المزراني
+  </span>{"    "}
+  <br />
+  بدعوتكم لمشاركتهم فرحة حفل الزواج،<br />
+  راجين من الله أن تكتمل فرحتهم بحضوركم وتشريفكم لهذه المناسبة السعيدة.
+</motion.p>
+
+
 
         {/* Top ornamental divider */}
         <motion.div
@@ -60,6 +90,37 @@ export default function HeroSection() {
           </svg>
         </motion.div>
 
+        
+
+       {/* Couple names */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1.2, delay: 1.1 }}
+>
+  <h1 className="font-arabic text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight my-4">
+
+    <span className="gold-shimmer">
+      هشام  
+    </span>
+
+    <span
+      className="mx-9 inline-block font-calligraphy text-5xl md:text-6xl"
+      style={{
+        color: "#C8A45D",
+        textShadow: "0 0 15px rgba(200,164,93,0.35)"
+      }}
+    >
+         &
+    </span>
+
+    <span className="gold-shimmer">
+      وداد
+    </span>
+
+  </h1>
+</motion.div>
+<br />
         {/* Warm invitation greeting */}
         <motion.p
           className="font-arabic text-base md:text-lg mb-6 leading-relaxed"
@@ -69,24 +130,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           فرحتنا لا تكتمل إلا بوجودكم، وبهجة ليلتنا تزداد بنوركم.<br />
-          تدعوكم عائلاتنا لمشاركتنا لحظة العمر المميّزة في حفل زفاف:
         </motion.p>
-
-        {/* Couple names */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, delay: 1.1 }}
-        >
-          <h1 className="font-arabic text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight my-4">
-            <span className="gold-shimmer">هشام داود</span>
-
-
-          <div className="flex justify-center my-5"> <Gem className="text-gold" size={36} strokeWidth={1.5} /> </div>
-  
-              <span className="gold-shimmer">وداد المزراني</span>
-          </h1>
-        </motion.div>
 
         {/* Bottom ornament */}
         <motion.div

@@ -3,8 +3,9 @@ import { ExternalLink, MapPin, Navigation } from 'lucide-react';
 
 export default function LocationSection() {
   return (
-    <section className="section-spacing">
-      <div className="container-luxury">
+    <section className="  section-spacing">
+      <div className="flex justify-center"></div>
+      <div className=" container-luxury">
         {/* Section Header */}
         <motion.div
           className="text-center mb-12"
@@ -14,17 +15,16 @@ export default function LocationSection() {
           viewport={{ once: true }}
         >
           <p
-            className="font-display text-sm tracking-[0.3em] uppercase mb-3"
+            className="flex justify-center font-display text-sm tracking-[0.3em] uppercase mb-3"
             style={{ color: '#A09080' }}
           >
-            احضروا معنا في
-          </p>
+إيجو ڨدانا          </p>
 
           <h2 className="font-calligraphy text-3xl md:text-4xl gold-shimmer mb-2">
             مكان الحفل
           </h2>
 
-          <div className="ornament-divider">
+          <div className=" ornament-divider">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path
                 d="M7 0L8.5 5.5L14 7L8.5 8.5L7 14L5.5 8.5L0 7L5.5 5.5L7 0Z"
@@ -36,7 +36,7 @@ export default function LocationSection() {
 
         {/* Venue Card */}
         <motion.div
-          className="relative overflow-hidden rounded-3xl max-w-4xl mx-auto"
+          className=" relative overflow-hidden rounded-3xl max-w-4xl mx-auto"
           style={{
             boxShadow:
               '0 25px 60px rgba(0,0,0,0.12), 0 8px 20px rgba(200,164,93,0.15)',
@@ -47,13 +47,14 @@ export default function LocationSection() {
           viewport={{ once: true }}
         >
           {/* Background */}
+          {/* Background */}
 <div className="absolute inset-0">
   <img
-  src={`${import.meta.env.BASE_URL}images/salle.jpg`}
-  alt="LE JOUR J Wedding Venue"
-  className="w-full h-full object-cover"
-  loading="lazy"
-/>
+    src={`${import.meta.env.BASE_URL}images/salle.jpg`}
+    alt="LE JOUR J Wedding Venue"
+    className="w-full h-full object-cover object-center"
+    loading="lazy"
+  />
 
   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-black/10" />
 </div>
