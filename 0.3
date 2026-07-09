@@ -1,0 +1,28 @@
+Change les couleurs par défaut du premier plan et de l’arrière-plan de la console.
+
+COLOR [attr]
+
+ attr    Spécifie les attributs de couleurs de l’apparence de la console
+
+Les attributs de couleurs sont spécifiés par DEUX chiffres hexadécimaux -- le
+premier correspond à l’arrière-plan, le second au premier plan. Chaque chiffre
+peut prendre n’importe quelle de ces valeurs :
+
+    0 = Noir        8 = Gris
+    1 = Bleu        9 = Bleu clair
+    2 = Vert        A = Vert clair
+    3 = Bleu-gris        B = Cyan
+    4 = Rouge      C = Rouge clair
+    5 = Violet     D = Violet clair
+    6 = Jaune        E = Jaune clair
+    7 = Blanc       F = Blanc brillant
+
+Si aucun argument n’est donné, cette commande restaure les couleurs
+sélectionnées au moment où CMD.EXE a été ouvert. Cette valeur vient soit de la
+fenêtre de la console, du commutateur en ligne de commande /T, ou de la valeur
+DefaultColor du registre.
+
+La commande COLOR met ERRORLEVEL à 1 si vous tentez de l’exécuter
+avec la même couleur pour l’arrière et le premier plan.
+
+Exemple : « COLOR fc » affiche du rouge sur du blanc

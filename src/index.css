@@ -1,0 +1,552 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+
+/* ========================================
+   TAILWIND v4 THEME
+   ======================================== */
+@theme {
+  --color-ivory: #F8F4EC;
+  --color-sand: #E8D7B9;
+  --color-med-blue: #1D5FA7;
+  --color-gold: #C8A45D;
+  --color-gold-light: #D4B76A;
+  --color-gold-dark: #A88A3D;
+  --color-olive: #7A8B5B;
+  --color-olive-light: #95A87A;
+  --color-bougainvillea: #C44B8B;
+  --color-bougainvillea-light: #E77BB5;
+  --color-terracotta: #C47A5A;
+  --color-sea: #3A9EC2;
+  --color-sea-light: #7DC4E0;
+
+  --font-display: 'Playfair Display', serif;
+  --font-calligraphy: 'Cormorant Garamond', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-arabic: 'Amiri', serif;
+
+  --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ========================================
+   BASE RESET & GLOBAL STYLES
+   ======================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ivory);
+  color: #2D2A24;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: white;
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dark);
+}
+
+/* ========================================
+   TYPOGRAPHY UTILITY CLASSES
+   ======================================== */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-calligraphy {
+  font-family: var(--font-calligraphy);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+  direction: rtl;
+}
+
+/* ========================================
+   GOLD FOIL SHIMMER EFFECT
+   ======================================== */
+.gold-shimmer {
+  background: linear-gradient(
+    105deg,
+    var(--color-gold-dark) 0%,
+    var(--color-gold) 25%,
+    #E8D090 50%,
+    var(--color-gold) 75%,
+    var(--color-gold-dark) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 200% center; }
+  50% { background-position: -200% center; }
+}
+
+/* ========================================
+   GLASSMORPHISM
+   ======================================== */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.glass-gold {
+  background: rgba(200, 164, 93, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 164, 93, 0.25);
+}
+
+/* ========================================
+   ISLAMIC GEOMETRIC PATTERN (SVG BG)
+   ======================================== */
+.pattern-islamic {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8A45D' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-ceramic {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231D5FA7' fill-opacity='0.06'%3E%3Cpath d='M40 0l40 40-40 40L0 40 40 0zm0 10L10 40l30 30 30-30L40 10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ========================================
+   GOLD BORDER ORNAMENT
+   ======================================== */
+.gold-border {
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(var(--color-ivory), var(--color-ivory)),
+    linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), #E8D090, var(--color-gold), var(--color-gold-dark));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* ========================================
+   DECORATIVE DIVIDER
+   ======================================== */
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* ========================================
+   FLOATING ANIMATION KEYFRAMES
+   ======================================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-20px) rotate(5deg); }
+  50% { transform: translateY(-10px) rotate(-3deg); }
+  75% { transform: translateY(-25px) rotate(3deg); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-15px) translateX(10px); }
+  66% { transform: translateY(-8px) translateX(-8px); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(-100px) translateY(0px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.7; }
+  100% { transform: translateX(calc(100vw + 100px)) translateY(-200px) rotate(720deg); opacity: 0; }
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100px) rotate(0deg) scale(1); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(calc(100vh + 100px)) rotate(360deg) scale(0.5); opacity: 0; }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-5px) translateY(-3px); }
+  50% { transform: translateX(0) translateY(-5px); }
+  75% { transform: translateX(5px) translateY(-3px); }
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 164, 93, 0.3); }
+  50% { box-shadow: 0 0 20px 5px rgba(200, 164, 93, 0.15); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bird {
+  0% { transform: translateX(-50px) translateY(0) scaleX(1); }
+  25% { transform: translateX(25vw) translateY(-30px) scaleX(0.9); }
+  50% { transform: translateX(50vw) translateY(-10px) scaleX(1); }
+  75% { transform: translateX(75vw) translateY(-40px) scaleX(0.9); }
+  100% { transform: translateX(110vw) translateY(-20px) scaleX(1); }
+}
+
+@keyframes envelopeOpen {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(180deg); }
+}
+
+@keyframes slideOut {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-120%); }
+}
+
+/* ========================================
+   FLOATING ELEMENT CLASSES
+   ======================================== */
+.floating-petal {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(ellipse, var(--color-bougainvillea-light), var(--color-bougainvillea));
+  border-radius: 50% 0 50% 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  animation: fall linear infinite;
+}
+
+.floating-palm {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.15;
+  animation: sway 6s ease-in-out infinite;
+}
+
+.flying-bird {
+  position: fixed;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.2;
+  animation: bird linear infinite;
+}
+
+/* ========================================
+   SECTION SPACING
+   ======================================== */
+.section-spacing {
+  padding: 80px 24px;
+}
+
+@media (min-width: 768px) {
+  .section-spacing {
+    padding: 120px 48px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding: 140px 64px;
+  }
+}
+
+/* ========================================
+   LUXURY CARD
+   ======================================== */
+.luxury-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(200, 164, 93, 0.2);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 20px 50px -12px rgba(200, 164, 93, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transition: transform 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 12px -2px rgba(0, 0, 0, 0.08),
+    0 30px 60px -15px rgba(200, 164, 93, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   LUXURY BUTTON
+   ======================================== */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: white;
+  background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), var(--color-gold-light));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-luxury);
+  box-shadow:
+    0 4px 15px rgba(200, 164, 93, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+}
+
+.btn-gold:hover::after {
+  left: 150%;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px rgba(200, 164, 93, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--color-gold);
+  background: transparent;
+  border: 2px solid var(--color-gold);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-luxury);
+}
+
+.btn-outline:hover {
+  background: var(--color-gold);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(200, 164, 93, 0.3);
+}
+
+/* ========================================
+   FORM INPUT STYLES
+   ======================================== */
+.luxury-input {
+  width: 100%;
+  padding: 14px 20px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #2D2A24;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1.5px solid rgba(200, 164, 93, 0.2);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s var(--ease-luxury);
+  backdrop-filter: blur(10px);
+}
+
+.luxury-input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(200, 164, 93, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.luxury-input::placeholder {
+  color: #A09080;
+}
+
+.luxury-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+.dark body,
+body.dark {
+  background-color: #1A1815;
+  color: #E8E0D4;
+}
+
+.dark body::before,
+body.dark::before {
+  opacity: 0.02;
+}
+
+.dark .glass,
+body.dark .glass {
+  background: rgba(30, 28, 24, 0.7);
+  border-color: rgba(200, 164, 93, 0.15);
+}
+
+.dark .glass-strong,
+body.dark .glass-strong {
+  background: rgba(30, 28, 24, 0.85);
+  border-color: rgba(200, 164, 93, 0.2);
+}
+
+.dark .luxury-card,
+body.dark .luxury-card {
+  background: rgba(30, 28, 24, 0.7);
+  border-color: rgba(200, 164, 93, 0.15);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 20px 50px -12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .luxury-input,
+body.dark .luxury-input {
+  background: rgba(30, 28, 24, 0.6);
+  border-color: rgba(200, 164, 93, 0.2);
+  color: #E8E0D4;
+}
+
+.dark .luxury-input:focus,
+body.dark .luxury-input:focus {
+  background: rgba(30, 28, 24, 0.8);
+}
+
+.dark .gold-border,
+body.dark .gold-border {
+  background-image:
+    linear-gradient(#1A1815, #1A1815),
+    linear-gradient(135deg, var(--color-gold-dark), var(--color-gold), #E8D090, var(--color-gold), var(--color-gold-dark));
+}
+
+/* ========================================
+   RESPONSIVE UTILITIES
+   ======================================== */
+.container-luxury {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (min-width: 768px) {
+  .container-luxury {
+    padding: 0 48px;
+  }
+}
+
+/* ========================================
+   WAVE ANIMATION FOR FOOTER
+   ======================================== */
+.wave-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.wave-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 60px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%231D5FA7' fill-opacity='0.08' d='M0,32L48,37.3C96,43,192,53,288,58.7C384,64,480,64,576,56C672,48,768,32,864,32C960,32,1056,48,1152,53.3C1248,59,1344,53,1392,50.7L1440,48L1440,100L1392,100C1344,100,1248,100,1152,100C1056,100,960,100,864,100C768,100,672,100,576,100C480,100,384,100,288,100C192,100,96,100,48,100L0,100Z'%3E%3C/path%3E%3C/svg%3E") repeat-x;
+  background-size: 1440px 100px;
+  animation: wave 8s linear infinite;
+}
+
+@keyframes waveMove {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1440px; }
+}
