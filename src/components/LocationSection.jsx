@@ -49,7 +49,7 @@ export default function LocationSection() {
           {/* Background */}
 <div className="absolute inset-0">
   <img
-    src="public/images/salle.jpg"
+    src="/images/salle.jpg"
     alt="LE JOUR J Wedding Venue"
     className="w-full h-full object-cover"
     loading="lazy"
