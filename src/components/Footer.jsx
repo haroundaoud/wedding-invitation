@@ -111,7 +111,7 @@ export default function Footer() {
             </svg>
           </div>
           <p className="font-body text-xs tracking-widest uppercase" style={{ color: '#B0A090' }}>
-             Hichem Daoud  & Wided Mezrani · August 7 & 8, 2026 · Djerba, Tunisia
+             Hichem Daoud  & Wided Mezrani · August  8, 2026 · Djerba, Tunisia
           </p>
           <p className="font-body text-xs mt-2" style={{ color: '#C0B0A0' }}>
             Made with love ♥

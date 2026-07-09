@@ -616,7 +616,7 @@ export default function Envelope({ onOpen }) {
                 <p className="font-display text-[9px] sm:text-[10px] text-[#444] leading-relaxed uppercase tracking-wider">
                   Le mariage royal
                   <br />
-                  <span className="text-[#1D5FA7] font-semibold">7 & 8 Août 2026</span>
+                  <span className="text-[#1D5FA7] font-semibold">8 Août 2026</span>
                   <br />
                   Radisson Blu, Djerba
                 </p>

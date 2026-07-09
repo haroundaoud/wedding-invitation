@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useCountdown } from '../hooks/useCountdown';
 
-const WEDDING_DATE = '2026-08-07T18:00:00';
+const WEDDING_DATE = '2026-08-08T18:00:00';
 
 function CountdownRing({ value, max, label, delay }) {
   const radius = 46;
@@ -107,7 +107,6 @@ export default function Countdown() {
           <CountdownRing value={days} max={365} label="أيام" delay={0.1} />
           <CountdownRing value={hours} max={24} label="ساعات" delay={0.2} />
           <CountdownRing value={minutes} max={60} label="دقائق" delay={0.3} />
-          <CountdownRing value={seconds} max={60} label="ثواني" delay={0.4} />
 
         </div>
 
@@ -120,7 +119,7 @@ export default function Countdown() {
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          7 و 8 أوت 2026
+            8 أوت 2026
         </motion.p>
 
       </div>

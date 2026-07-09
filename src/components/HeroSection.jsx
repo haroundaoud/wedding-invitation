@@ -108,11 +108,12 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 1.5 }}
         >
           <p className="font-arabic text-lg md:text-xl font-semibold" style={{ color: '#6B5D4A' }}>
-            الزمان: الجمعة والسبت، 7 و 8 أوت 2026
+            الزمان: السبت، 8 أوت 2026
           </p>
           <p className="font-arabic text-base md:text-lg" style={{ color: 'var(--color-med-blue)' }}>
-            المكان: نزل راديسون بلو، جربة
-          </p>
+المكان
+قاعة الأفراح LE JOUR J
+المحمدية، تونس          </p>
           <p className="font-arabic text-sm md:text-base mt-4 italic" style={{ color: '#A09080' }}>
             العاقبة لديكم بالمسرات، ودامت دياركم عامرة بالأفراح.
           </p>

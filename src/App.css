@@ -57,7 +57,7 @@
 }
 
 #center {
-  display: flex;
+  display: auto;
   flex-direction: column;
   gap: 25px;
   place-content: center;
