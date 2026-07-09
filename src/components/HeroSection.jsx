@@ -64,7 +64,7 @@ export default function HeroSection() {
   >
     علي داود
   </span>{"    "}
-  و عائلة   {"       "}
+  و عائلة السيد  {"       "}
   <span
     className="font-bold"
     style={{ color: '#C8A45D' }}

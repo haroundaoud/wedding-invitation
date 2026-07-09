@@ -618,7 +618,7 @@ export default function Envelope({ onOpen }) {
                   <br />
                   <span className="text-[#1D5FA7] font-semibold">8 Août 2026</span>
                   <br />
-                  Radisson Blu, Djerba
+                  LE JOUR J, Mohammedia
                 </p>
               </div>
 
